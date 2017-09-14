@@ -24,6 +24,10 @@
 
 }( typeof window !== 'undefined' ? window : this, function ( RGBColor, stackBlur ) {
 
+	if (typeof Element === 'undefined') {
+	   return undefined;
+	}
+
 	// canvg(target, s)
 	// empty parameters: replace all 'svg' elements on page with 'canvas' elements
 	// target: canvas element or the id of a canvas element
