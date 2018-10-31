@@ -1,5 +1,5 @@
 {
-  "name": "canvg",
+  "name": "canvg-rappid",
   "description": "Javascript SVG parser and renderer on Canvas",
   "homepage": "https://github.com/gabelerner/canvg",
   "keywords": [
