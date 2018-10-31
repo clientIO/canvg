@@ -1160,7 +1160,7 @@
 	      ctx.miterLimit = 4;
 	      if (ctx.canvas.style && typeof ctx.font != 'undefined' && typeof windowEnv.getComputedStyle != 'undefined') {
 	        ctx.font = windowEnv.getComputedStyle(ctx.canvas).getPropertyValue('font');
-	        
+
 	        var fontSize = new svg.Property('fontSize', svg.Font.Parse(ctx.font).fontSize);
 	        if (fontSize.hasValue()) svg.rootEmSize = svg.emSize = fontSize.toPixels('y');
 	      }
@@ -2872,6 +2872,18 @@
 	    };
 	  };
 	  svg.Element.filter.prototype = new svg.Element.ElementBase;
+
+	  // Credit for `feDropShadow` goes to InvisionApp Canvg Fork
+	  svg.Element.feDropShadow = function (node) {
+	    this.base = svg.Element.ElementBase;
+	    this.base(node);
+	    this.addStylesFromStyleDefinition();
+
+	    this.apply = function (ctx, x, y, width, height) {
+	      // TODO: implement
+	    };
+	  };
+	  svg.Element.feDropShadow.prototype = new svg.Element.ElementBase;
 
 	  svg.Element.feMorphology = function (node) {
 	    this.base = svg.Element.ElementBase;
