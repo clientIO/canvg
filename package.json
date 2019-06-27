@@ -15,7 +15,7 @@
     "url": "git://github.com/gabelerner/canvg.git"
   },
   "main": "canvg.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "devDependencies": {},
   "scripts": {},
   "license": "MIT",
