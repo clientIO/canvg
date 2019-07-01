@@ -13,14 +13,14 @@
 	// export as AMD...
 	if ( typeof define !== 'undefined' && define.amd ) {
 		define('canvgModule', [ 'rgbcolor', 'stackblur' ], factory );
+	} else if (typeof module !== 'undefined' && module.exports) {
+
+		var rgbcolor = require('rgbcolor');
+		var stackblur = require('stackblur');
+		module.exports = factory(rgbcolor, stackblur);
 	}
 
-	// ...or as browserify
-	else if ( typeof module !== 'undefined' && module.exports ) {
-		module.exports = factory( require( 'rgbcolor' ), require( 'stackblur' ) );
-	}
-
-	global.canvg = factory( global.RGBColor, global.stackBlur );
+	 global.canvg = factory(typeof rgbcolor !== 'undefined' ? rgbcolor : global.RGBColor, typeof statckblur !== 'undefined' ? stackblur : global.stackBlur);
 
 }( typeof window !== 'undefined' ? window : this, function ( RGBColor, stackBlur ) {
 
